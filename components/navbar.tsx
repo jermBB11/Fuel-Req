@@ -3,18 +3,56 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="p-5 bg-gray-100 drop-shadow-black gap-2">
+   
+    <div className="navbar bg-base-100 shadow-sm">
+  <div className="flex-1">
+    <a className="btn btn-ghost text-lg">daisyUI</a>
+  </div>
+  <div className="flex gap-2">
+    <div className="gap-2 flex items-center mr-20">
       <div className="">
-        <ul className="flex gap-4  text-xl justify-center">
-          <Link href="/">Home</Link>
-          <Link href="/history">History</Link>
-          <Link href="/about">About</Link>
-          <Link href="/fuel_request">Request</Link>
-          <Link href="/login">Login</Link>
+        <ul className="flex gap-10 font-bold text-md justify-center items-center">
+          <Link 
+          className="hover:underline hover:text-blue-600 px-2"
+          href="/">Home</Link>
+          <Link 
+          className="hover:underline  hover:text-blue-600" 
+          href="/history">History</Link>
+          <Link 
+          className="hover:underline  hover:text-blue-600" 
+          href="/about">About</Link>
+          <Link 
+          className="hover:underline  hover:text-blue-600" 
+          href="/fuel_request">Request</Link>
+          <Link 
+          className="hover:underline  hover:text-blue-600" 
+          href="/login">Login</Link>
           
         </ul>
       </div>
     </div>
+    <div className="dropdown dropdown-end">
+      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+        <div className="w-10 rounded-full">
+          <img
+            alt="Tailwind CSS Navbar component"
+            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+        </div>
+      </div>
+      <ul
+        tabIndex={0}
+        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+        <li>
+          <a className="justify-between">
+            Profile
+          </a>
+        </li>
+        <li><a>Settings</a></li>
+        <li><a>Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
   );
 };
 

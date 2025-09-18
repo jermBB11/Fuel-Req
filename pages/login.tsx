@@ -1,4 +1,14 @@
+import { fetchUser } from "@/api/auth";
+import { FormEvent, useState } from "react";
+
 const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    const user = {email, password};
+    console.log(fetchUser);
+  }
 
 
 
@@ -7,7 +17,7 @@ const Login = () => {
       <div className="bg-white rounded-lg shadow-2xl w-full max-w-md p-8">
         <h2 className="text-3xl font-bold text-center mb-6 bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text">Login</h2>
 
-        <form>
+        <form onSubmit={handleSubmit}> 
           
           <div className="mb-4">
             <label className="block text-gray-700 mb-1 font-semibold" htmlFor="email">

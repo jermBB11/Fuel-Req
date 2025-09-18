@@ -3,21 +3,21 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const [data, setData] = useState<any[]>([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res =  await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/fuel-requests`);
-        const data = await res.json();
-        console.log("Fetched data:", data); // <-- Add this
-        setData(data.data);
-      } catch (error) {
-        console.error('error', error);
-      }
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const res =  await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/fuel-requests`);
+  //       const data = await res.json();
+  //       console.log("Fetched data:", data);
+  //       setData(data.data);
+  //     } catch (error) {
+  //       console.error('error', error);
+  //     }
 
-    }
+  //   }
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   return (
     
