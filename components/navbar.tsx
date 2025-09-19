@@ -4,16 +4,16 @@ import React from "react";
 const Navbar = () => {
   return (
    
-    <div className="navbar bg-base-100 shadow-sm">
-  <div className="flex-1">
-    <a className="btn btn-ghost text-lg">daisyUI</a>
+    <div className="navbar bg-base-100 shadow-sm flex justify-center-safe items-center">
+  <div className="">
+    <a className="btn btn-ghost text-lg ">daisyUI</a>
   </div>
-  <div className="flex gap-2">
-    <div className="gap-2 flex items-center mr-20">
+  <div className=" flex items-center gap-3">
+    <div className="gap-2 flex items-center">
       <div className="">
-        <ul className="flex gap-10 font-bold text-md justify-center items-center">
+        <ul className="flex gap-10 font-bold text-md items-center">
           <Link 
-          className="hover:underline hover:text-blue-600 px-2"
+          className="hover:underline hover:text-blue-600"
           href="/">Home</Link>
           <Link 
           className="hover:underline  hover:text-blue-600" 

@@ -1,4 +1,3 @@
-import { fetchUser } from "@/api/auth";
 import { FormEvent, useState } from "react";
 
 const Login = () => {
