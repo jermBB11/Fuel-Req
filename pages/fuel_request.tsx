@@ -6,6 +6,7 @@ const Fuel_Request = () => {
   const [requestor_head_office, setHeadOffice] = useState("");
   const [plate_no, setPlate] = useState("");
   const [vehicle, setVehicle] = useState("");
+  const [fuel_type, setFuelType] = useState("");
 
   const select_office: { [key: string]: string } = {
     MISO: "Bonggo Marcos",
@@ -28,6 +29,7 @@ const Fuel_Request = () => {
       requestor_head_office,
       plate_no,
       vehicle,
+      fuel_type,
     };
 
     try {
@@ -45,6 +47,7 @@ const Fuel_Request = () => {
       console.error("Submission error:", error);
       alert("Failed to submit request. Please try again.");
     }
+
   };
 
   return (
@@ -116,7 +119,21 @@ const Fuel_Request = () => {
                 required
               />
             </div>
-
+            <div className="flex justify-between items-center mb-2">
+              <label className="font-bold">Fuel Type</label>
+              <select
+                className="w-50 p-2 focus:outline-0"
+                id="fuel_type"
+                value={fuel_type}
+                onChange={(e) => setFuelType(e.target.value)}
+                required
+              >
+                <option value="">Select Fuel Type</option>
+                <option value="Regular">Regular</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Premium">Premium</option>
+              </select>
+            </div>
             <div className="flex justify-center mt-4">
               <button
                 className="bg-green-600 p-2 rounded text-white w-full"

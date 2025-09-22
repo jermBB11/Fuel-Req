@@ -79,7 +79,7 @@ export default function Home() {
         <h1 className="text-3xl font-bold font-mono">Fuel Inventory</h1>
       <div className="flex gap-2 flex-wrap mt-4 justify-center">
         {data.map((d: any) => (
-          <tr key={d.id} className="mt-5 flex">
+          <div key={d.id} className="mt-5 flex">
             <div className="card bg-base-100 w-130 shadow-sm">
               <div className="card-body">
                 <h2 className="card-title">Request ID: {d.request_id}</h2>
@@ -88,6 +88,9 @@ export default function Home() {
                 </p>
                 <p className="text-left text-sm">
                   {d.formatted_date}
+                </p>
+                <p className="text-left text-sm">
+                 Fuel Type: {d.fuel_type}
                 </p>
                 <div className="card-actions justify-end">
                   <button className="btn btn-primary">View</button>
@@ -128,7 +131,7 @@ export default function Home() {
                     </button>
                   </div>
                 </td> */}
-          </tr>
+          </div>
         ))}
         {/* </tbody>
         </table>
