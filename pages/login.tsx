@@ -1,47 +1,53 @@
+import { fetchUser } from "@/api/auth";
 import { FormEvent, useState } from "react";
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    const user = {email, password};
+    fetchUser();
+
     console.log(fetchUser);
-  }
+  };
 
-
-
-    return ( 
-        <div className="flex items-center justify-center min-h-screen">
+  return (
+    <div className="flex items-center justify-center min-h-screen">
       <div className="bg-white rounded-lg shadow-2xl w-full max-w-md p-8">
-        <h2 className="text-3xl font-bold text-center mb-6 bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text">Login</h2>
+        <h2 className="text-3xl font-bold text-center mb-6 bg-gradient-to-r from-blue-500 to-purple-600 text-transparent bg-clip-text">
+          Login
+        </h2>
 
-        <form onSubmit={handleSubmit}> 
-          
+        <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="block text-gray-700 mb-1 font-semibold" htmlFor="email">
+            <label
+              className="block text-gray-700 mb-1 font-semibold"
+              htmlFor="email"
+            >
               Email
             </label>
             <input
               type="email"
               id="email"
               required
-            //   onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
               className="w-full px-3 py-2 border-b border-gray-300 focus:outline-none focus:border-blue-500"
             />
           </div>
 
-         
           <div className="mb-6">
-            <label className="block text-gray-700 mb-1 font-semibold" htmlFor="password">
+            <label
+              className="block text-gray-700 mb-1 font-semibold"
+              htmlFor="password"
+            >
               Password
             </label>
             <input
               type="password"
               id="password"
               required
-            //   onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter your password"
               className="w-full px-3 py-2 border-b border-gray-300 focus:outline-none focus:border-blue-500"
             />
@@ -55,9 +61,11 @@ const Login = () => {
           </button>
         </form>
 
-    
         <div className="text-center mt-4">
-          <a href="/forgotpass" className="text-sm text-blue-500 hover:underline font-medium">
+          <a
+            href="/forgotpass"
+            className="text-sm text-blue-500 hover:underline font-medium"
+          >
             Forgot Password?
           </a>
         </div>
@@ -73,7 +81,7 @@ const Login = () => {
         </div>
       </div>
     </div>
-     );
-}
- 
+  );
+};
+
 export default Login;

@@ -1,3 +1,4 @@
+
 import { useContext, createContext, useState, ReactNode, Children } from "react";
 
 
@@ -22,6 +23,7 @@ export const ContextProvider = ( { children } : {children: ReactNode}) => {
 
   const toggleCount = () => {
     setCount(count + 1);
+    localStorage.setItem("count", count.toString())
   }
 
   return ( 

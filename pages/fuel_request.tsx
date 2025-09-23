@@ -33,11 +33,14 @@ const Fuel_Request = () => {
     };
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/add`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(request),
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_APP_URL}/api/add`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(request),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to submit request.");
@@ -47,7 +50,6 @@ const Fuel_Request = () => {
       console.error("Submission error:", error);
       alert("Failed to submit request. Please try again.");
     }
-
   };
 
   return (
